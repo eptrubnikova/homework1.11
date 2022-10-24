@@ -4,8 +4,10 @@ public class Main {
     public static void main(String[] args) {
         task1();
         task2();
+        task3();
 
     }
+
 
     private static void task1() {
         int year = 2019;
@@ -17,6 +19,12 @@ public class Main {
         int clientOS = getClientOS(osName);
         int yearIssueDevace = 2020;
         int clientYear = clientDeviceYear(yearIssueDevace);
+        System.out.println();
+    }
+
+    private static void task3() {
+        int deliveryDistance = 109;
+        int totalTimeDelivery = timeDelivery(deliveryDistance);
     }
 
     public static void yearLeap(int yearNumber) {
@@ -38,7 +46,7 @@ public class Main {
         }
     }
 
-    public static int clientDeviceYear (int year){
+    public static int clientDeviceYear(int year) {
         int currentYear = LocalDate.now().getYear();
         if (year < currentYear) {
             System.out.print(" облегченную версию приложения");
@@ -46,6 +54,17 @@ public class Main {
         } else {
             System.out.print(" новую версию приложения");
             return currentYear;
+        }
+    }
+
+    public static int timeDelivery(int totalKilometers) {
+        int timeTravelCard = 0;
+        for (int i = 20; ; i = i + 40) {
+            timeTravelCard++;
+            if (totalKilometers < i) {
+                System.out.println("На доставку карты понадобится: " + timeTravelCard + " дней");
+                return timeTravelCard;
+            }
         }
     }
 }
