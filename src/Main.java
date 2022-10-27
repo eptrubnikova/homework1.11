@@ -30,7 +30,6 @@ public class Main {
     public static void yearLeap(int yearNumber) {
         if ((yearNumber % 4 == 0) && (yearNumber % 100 != 0) || (yearNumber % 400 == 0)) {
             System.out.println(yearNumber + " - високосный год");
-            return;
         } else {
             System.out.println(yearNumber + " - не високосный год");
         }
